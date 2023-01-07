@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Test</title>
+        <link rel="stylesheet" href="/styles/resets.css">
+        <link rel="stylesheet" href="/styles/base.css">
+        <link rel="stylesheet" href="/styles/header.css">
+        <link rel="stylesheet" href="/styles/form.css">
+        <link rel="stylesheet" href="/styles/footer.css">
+    </head>
+
+    <body>
+
+        <header>
+            <div class="">
+               <a href="#">Home</a> 
+            </div>
+            <div class="">
+                <h1>Article  sentiment Analysis </h1>
+             </div>
+            <div class="">
+                navigation
+            </div>
+        </header>
+
+
+        <main>
+            <div class="container">
+              <p>Enter a valid URL of an article to check its sentiment.</p>
+              <section>
+                <form id="form">
+                  <label for="url">URL</label>
+                  <input id="article-url" type="text" name="input" value="" placeholder="Enter a valid Article URL here" />
+                  <button
+                    type="submit"
+                    class="btn"
+                  >
+                    Submit
+                  </button>
+                </form>
+              </section>
+      
+              <section>
+                <strong>Form Results:</strong>
+                <div id="text"> title:</div>
+                <div id="agreement">agreement:</div>
+                <div id="subjectivity">subjectivity:</div>
+                <div id="confidence">confidence:</div>
+                <div id="irony">irony:</div>
+                <div id="score_tag">score_tag:</div>
+              </section>
+            </div>
+          </main>
+      
+        <footer>
+            <h4>© 2020 Copyright</h4>
+        </footer>
+
+        <script>
+            // Check that service workers are supported
+            if ('serviceWorker' in navigator) {
+                // Use the window load event to keep the page load performant
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('/service-worker.js');
+                });
+            }
+        </script>
+    </body>
+</html>
